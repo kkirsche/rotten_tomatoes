@@ -5,13 +5,10 @@ module RottenTomatoes
   # The Client class is the interface to the Rotten Tomatoes API
   class Client
     attr_accessor :client
+    attr_reader :api_key
     def initialize(api_key)
       @api_key = api_key
       @client = Hurley::Client.new 'http://api.rottentomatoes.com/api/public/v1.0'
-    end
-
-    def api_key
-      @api_key
     end
 
     def argument_hash(args = {}, symbols = [])
