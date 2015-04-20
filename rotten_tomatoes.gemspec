@@ -9,9 +9,12 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kevin Kirsche"]
   spec.email         = ["Kev.Kirsche@gmail.com"]
 
-  spec.summary       = %q{Rotten Tomatoes v1 API Wrapper.}
-  spec.description   = %q{Wraps the Rotten Tomatoes v1.0 JSON API in a simple to use package.}
+  spec.summary       = %q{Unofficial Rotten Tomatoes v1 API Wrapper.}
+  spec.description   = %q{Unofficial wrapper for the complete Rotten Tomatoes v1.0 JSON API. Here, I work to provide developers with a full featured library letting them focus on the important part, their idea.}
   spec.homepage      = "https://github.com/kkirsche/rotten_tomatoes"
+  spec.license       = "MIT"
+
+  spec.required_ruby_version = '>= 2.0.0'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"

@@ -6,6 +6,7 @@ module RottenTomatoes
   class Client
     attr_accessor :client
     attr_reader :api_key
+
     def initialize(api_key)
       @api_key = api_key
       @client = Hurley::Client.new 'http://api.rottentomatoes.com/api/public/v1.0'
