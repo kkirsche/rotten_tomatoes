@@ -2,9 +2,7 @@
 
 # Rotten Tomatoes
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rotten_tomatoes`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Rotten Tomatoes Gem, your unofficial wrapper for the complete Rotten Tomatoes v1.0 JSON API. Here, I work to provide developers with a full featured library letting them focus on the important part, their idea.
 
 ## Installation
 
