@@ -71,13 +71,6 @@ module RottenTomatoes
       JSON.parse(response.body)
     end
 
-    def upcoming_movies(args = {})
-      response = @client.get('lists/movies/upcoming.json',
-                             argument_hash(args,
-                                           [:page_limit, :page, :country]))
-      JSON.parse(response.body)
-    end
-
     def top_rentals(args = {})
       response = @client.get('lists/dvds/top_rentals.json',
                              argument_hash(args, [:limit, :country]))
