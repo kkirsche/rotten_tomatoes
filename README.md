@@ -14,21 +14,28 @@ gem 'rotten_tomatoes'
 
 And then execute:
 
-    $ bundle
+```shell
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install rotten_tomatoes
+```shell
+$ gem install rotten_tomatoes
+```
 
 ## Usage
+```shell
+$ gem install rotten_tomatoes
+```
 
-    $ gem install rotten_tomatoes
+```ruby
+# your_file.rb
+require 'rotten_tomatoes'
+api_client = RottenTomatoes::Client.new api_key: 'myAPIkey'
 
-    # your_file.rb
-    require 'rotten_tomatoes'
-    api_client = RottenTomatoes::Client.new api_key: 'myAPIkey'
-    # Start enjoying the Rotten Tomatoes API
-
+# Start enjoying the Rotten Tomatoes API
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
