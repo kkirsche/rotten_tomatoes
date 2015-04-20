@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ gem install rotten_tomatoes
+
+    # your_file.rb
+    require 'rotten_tomatoes'
+    api_client = RottenTomatoes::Client.new api_key: 'myAPIkey'
 
 ## Development
 
@@ -32,7 +36,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/rotten_tomatoes/fork )
+1. Fork it ( https://github.com/kkirsche/rotten_tomatoes/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
