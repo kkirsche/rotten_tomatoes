@@ -23,107 +23,89 @@ module RottenTomatoes
       end
     end
 
-    def movies_search(args = {})
-      response = @client.get('movies.json',
-                             argument_hash(args, [:q, :page_limit, :page]))
-
+    def request(args = {})
+      response = @client.get(args[:url],
+                             argument_hash(args[:args] || {},
+                                           args[:symbols] || []))
       JSON.parse(response.body)
+    end
+
+    def movies_search(args = {})
+      request url: 'movies.json', args: args, symbols: [:q, :page_limit, :page]
     end
 
     def lists_directory
-      response = @client.get('lists.json', argument_hash)
-      JSON.parse(response.body)
+      request url: 'lists.json'
     end
 
     def movie_lists_directory
-      response = @client.get('lists/movies.json', argument_hash)
-      JSON.parse(response.body)
+      request url: 'lists/movies.json'
     end
 
     def dvd_lists_directory
-      response = @client.get('lists/dvds.json', argument_hash)
-      JSON.parse(response.body)
+      request url: 'lists/dvds.json'
     end
 
     def box_office_movies(args = {})
-      response = @client.get('lists/movies/box_office.json',
-                             argument_hash(args, [:limit, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/movies/box_office.json',
+              args: args, symbols: [:limit, :country]
     end
 
     def in_theater_movies(args = {})
-      response = @client.get('lists/movies/in_theaters.json',
-                             argument_hash(args,
-                                           [:page_limit, :page, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/movies/in_theaters.json',
+              args: args, symbols: [:page_limit, :page, :country]
     end
 
     def opening_movies(args = {})
-      response = @client.get('lists/movies/opening.json',
-                             argument_hash(args, [:limit, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/movies/opening.json',
+              args: args, symbols: [:limit, :country]
     end
 
     def upcoming_movies(args = {})
-      response = @client.get('lists/movies/upcoming.json',
-                             argument_hash(args,
-                                           [:page_limit, :page, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/movies/upcoming.json',
+              args: args, symbols: [:page_limit, :page, :country]
     end
 
     def top_rentals(args = {})
-      response = @client.get('lists/dvds/top_rentals.json',
-                             argument_hash(args, [:limit, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/dvds/top_rentals.json',
+              args: args, symbols: [:limit, :country]
     end
 
     def current_dvd_releases(args = {})
-      response = @client.get('lists/dvds/current_releases.json',
-                             argument_hash(args,
-                                           [:page_limit, :page, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/dvds/current_releases.json',
+              args: args, symbols: [:page_limit, :page, :country]
     end
 
     def new_dvd_releases(args = {})
-      response = @client.get('lists/dvds/new_releases.json',
-                             argument_hash(args,
-                                           [:page_limit, :page, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/dvds/new_releases.json',
+              args: args, symbols: [:page_limit, :page, :country]
     end
 
     def upcoming_dvds(args = {})
-      response = @client.get('lists/dvds/upcoming.json',
-                             argument_hash(args,
-                                           [:page_limit, :page, :country]))
-      JSON.parse(response.body)
+      request url: 'lists/dvds/upcoming.json',
+              args: args, symbols: [:page_limit, :page, :country]
     end
 
     def movie_info(movie_id, args = {})
-      response = @client.get("movies/#{movie_id}.json", argument_hash(args))
-      JSON.parse(response.body)
+      request url: "movies/#{movie_id}.json", args: args
     end
 
     def movie_cast(movie_id, args = {})
-      response = @client.get("movies/#{movie_id}/cast.json", argument_hash(args))
-      JSON.parse(response.body)
+      request url: "movies/#{movie_id}/cast.json", args: args
     end
 
     def movie_reviews(movie_id, args = {})
-      response = @client.get("movies/#{movie_id}/reviews.json",
-                             argument_hash(args, [:review_type, :page_limit, :page, :country]))
-      JSON.parse(response.body)
+      request url: "movies/#{movie_id}/reviews.json",
+              args: args, symbols: [:review_type, :page_limit, :page, :country]
     end
 
     def similar_movies(movie_id, args = {})
-      response = @client.get("movies/#{movie_id}/similar.json",
-                             argument_hash(args, [:limit]))
-      JSON.parse(response.body)
+      request url: "movies/#{movie_id}/similar.json",
+              args: args, symbols: [:limit]
     end
 
     def movie_alias(args = {})
-      response = @client.get('movie_alias.json',
-                             argument_hash(args, [:type, :id]))
-      JSON.parse(response.body)
+      request url: 'movie_alias.json', args: args, symbols: [:type, :id]
     end
   end
 end

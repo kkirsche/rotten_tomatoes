@@ -1,4 +1,6 @@
-# RottenTomatoes
+[![Build Status](https://travis-ci.org/kkirsche/rotten_tomatoes.svg?branch=master)](https://travis-ci.org/kkirsche/rotten_tomatoes) [![Test Coverage](https://codeclimate.com/github/kkirsche/rotten_tomatoes/badges/coverage.svg)](https://codeclimate.com/github/kkirsche/rotten_tomatoes) [![Code Climate](https://codeclimate.com/github/kkirsche/rotten_tomatoes/badges/gpa.svg)](https://codeclimate.com/github/kkirsche/rotten_tomatoes)
+
+# Rotten Tomatoes
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rotten_tomatoes`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -27,6 +29,7 @@ Or install it yourself as:
     # your_file.rb
     require 'rotten_tomatoes'
     api_client = RottenTomatoes::Client.new api_key: 'myAPIkey'
+    # Start enjoying the Rotten Tomatoes API
 
 ## Development
 
