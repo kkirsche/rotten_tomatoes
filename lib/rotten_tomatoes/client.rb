@@ -14,11 +14,11 @@ module RottenTomatoes
     #
     # == Parameters
     #
-    # +api_key+ - String
+    # @param [String] +api_key+ - The Rotten tomatoes API key.
     #
     # == Returns
     #
-    # +self+ - Object
+    # @return [RottenTomatoes::Client] - An instance of `RottenTomatoes::Client`
     #
     # == Example
     #
@@ -30,16 +30,16 @@ module RottenTomatoes
     end
 
     # == Argument Hash (Private Method)
-    # Internal method, not for use by third-party developers. The argument_hash method is used to generate the hash which will be URL encoded when making the next request with the Rotten Tomatoes API.
+    # Internal method, not for use by third-party developers. The +argument_hash+ method is used to generate the hash which will be URL encoded when making the next request with the Rotten Tomatoes API.
     #
     # == Parameters
     #
-    # +args+ - Hash - The original hash which was sent to the calling method.
-    # +symbols - Array - An array of symbols which you would like to send to the API.
+    # @param [Hash] +args+ - The original hash which was sent to the calling method.
+    # @param [Hash] +symbols+ - An array of symbols which you would like to send to the API.
     #
     # == Returns
     #
-    # Void
+    # @return [void]
     #
     # == Example
     #
@@ -57,15 +57,15 @@ module RottenTomatoes
     private :argument_hash
 
     # == Request (Private Method)
-    # Internal method, not for use by third-party developers. The request method is used to send the get request to the API and then will return the parsed body as a hash.
+    # Internal method, not for use by third-party developers. The +request+ method is used to send the get request to the API and then will return the parsed body as a hash.
     #
     # == Parameters
     #
-    # +args+ - Hash - The hash may, as all parameters except :url are optional, contain :url containing the API endpoint which will be contacted, :args which represent the arguments of the calling method, and :symbols which are the symbols which may be sent with the request. Examples include :page, :limit, :query.
+    # @param [Hash] +args+ - The hash may, as all parameters except `:url` are optional, contain `:url` containing the API endpoint which will be contacted, `:args` which represent the arguments of the calling method, and `:symbols` which are the symbols which may be sent with the request. Examples include `:page`, `:limit`, `:query`.
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -80,19 +80,19 @@ module RottenTomatoes
     private :request
 
     # == Movies Search
-    # The movies_search method is used to do plain text searches allowing you to find your favorite movies.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Movies_Search
+    # The +movies_search+ method is used to do plain text searches allowing you to find your favorite movies.
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Movies_Search Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :q - The plain text search query to search for a movie. Default value is nil.
-    #   * :page_limit - The amount of movie search results to show per page. Default value is 30.
-    #   * :page - The selected page of movie search results. Default value is 1.
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:q` - The plain text search query to search for a movie. Default value is nil.
+    #   * `:page_limit` - The amount of movie search results to show per page. Default value is 30.
+    #   * `:page` - The selected page of movie search results. Default value is 1.
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -105,21 +105,21 @@ module RottenTomatoes
     end
 
     # == Lists Directory
-    # The lists_directory method is used to retrieve the top level lists available in the API.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Lists_Directory
+    # The +lists_directory+ method is used to retrieve the top level lists available in the API.
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Lists_Directory Documentation}
     #
     # == Parameters
     #
-    # None
+    # @param N/A
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash with the following example response:
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash with the following example response:
     #
-    # links: {
-    #   movies: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies.json',
-    #   dvds: 'http://api.rottentomatoes.com/api/public/v1.0/lists/dvds.json'
-    # }
+    #    links: {
+    #       movies: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies.json',
+    #       dvds: 'http://api.rottentomatoes.com/api/public/v1.0/lists/dvds.json'
+    #    }
     #
     # == Example
     #
@@ -130,16 +130,16 @@ module RottenTomatoes
     end
 
     # == Movie Lists Directory
-    # The movie_lists_directory method is used to retrieve the movie lists available.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Lists_Directory
+    # The +movie_lists_directory+ method is used to retrieve the movie lists available.
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Lists_Directory Documentation}
     #
     # == Parameters
     #
-    # None
+    # @param None
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -150,16 +150,16 @@ module RottenTomatoes
     end
 
     # == DVD Lists Directory
-    # The dvd_lists_directory method is used to retrieve the dvd lists available.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/DVD_Lists_Directory
+    # The +dvd_lists_directory+ method is used to retrieve the dvd lists available.
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/DVD_Lists_Directory Documentation}
     #
     # == Parameters
     #
-    # None
+    # @param None
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -175,13 +175,13 @@ module RottenTomatoes
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :limit - Limits the number of box office movies returned. Default value is 10.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:limit` - Limits the number of box office movies returned. Default value is 10.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -195,18 +195,18 @@ module RottenTomatoes
 
     # == In Theater Movies
     # Retrieves movies currently in theaters.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/In_Theaters_Movies
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/In_Theaters_Movies Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :page_limit - The amount of movies in theaters to show per page. Default value is 16.
-    #   * :page - The selected page of in theaters movies. Default value is 1.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:page_limit` - The amount of movies in theaters to show per page. Default value is 16.
+    #   * `:page` - The selected page of in theaters movies. Default value is 1.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -220,17 +220,17 @@ module RottenTomatoes
 
     # == Opening Movies
     # Retrieves movies current opening movies.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Opening_Movies
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Opening_Movies Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :limit - Limits the number of opening movies returned. Default value is 16.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:limit` - Limits the number of opening movies returned. Default value is 16.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -244,18 +244,18 @@ module RottenTomatoes
 
     # == Upcoming Movies
     # Retrieves movies current opening movies.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Upcoming_Movies
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Upcoming_Movies Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :page_limit - The amount of upcoming movies to show per page. Default value is 16.
-    #   * :page - The selected page of upcoming movies. Default value is 1.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:page_limit` - The amount of upcoming movies to show per page. Default value is 16.
+    #   * `:page` - The selected page of upcoming movies. Default value is 1.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -269,17 +269,17 @@ module RottenTomatoes
 
     # == Top Rentals
     # Retrieves the current top dvd rentals.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Top_Rentals
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Top_Rentals Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :limit - Limits the number of top rentals returned. Default value is 10.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:limit` - Limits the number of top rentals returned. Default value is 10.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -293,18 +293,18 @@ module RottenTomatoes
 
     # == Current Release DVDs
     # Retrieves current release dvds. Results are paginated if they go past the specified page limit.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Current_Release_DVDs
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Current_Release_DVDs Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :page_limit - The amount of new release dvds to show per page. Default value is 16.
-    #   * :page - The selected page of current DVD releases. Default value is 1.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:page_limit` - The amount of new release dvds to show per page. Default value is 16.
+    #   * `:page` - The selected page of current DVD releases. Default value is 1.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -318,18 +318,18 @@ module RottenTomatoes
 
     # == New Release DVDs
     # Retrieves new release dvds. Results are paginated if they go past the specified page limit.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/New_Release_DVDs
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/New_Release_DVDs Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :page_limit - The amount of new release dvds to show per page. Default value is 16.
-    #   * :page - The selected page of new release DVDs. Default value is 1.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:page_limit` - The amount of new release dvds to show per page. Default value is 16.
+    #   * `:page` - The selected page of new release DVDs. Default value is 1.
+    #   * `:country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -343,18 +343,18 @@ module RottenTomatoes
 
     # == Upcoming DVDs
     # Retrieves upcoming dvds. Results are paginated if they go past the specified page limit.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Upcoming_DVDs
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Upcoming_DVDs Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :page_limit - The amount of new release dvds to show per page. Default value is 16.
-    #   * :page - The selected page of new release DVDs. Default value is 1.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:page_limit` - The amount of new release dvds to show per page. Default value is 16.
+    #   * `:page` - The selected page of new release DVDs. Default value is 1.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -368,15 +368,15 @@ module RottenTomatoes
 
     # == Movie Info
     # Detailed information on a specific movie specified by ID. You can use the movies_search method or peruse the lists of movies/dvds to get the urls to movies.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Info
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Info Documentation}
     #
     # == Parameters
     #
-    # +movie_id+ - Int / String - Example: 770672122
+    # @param [Int|String] - +movie_id+ - Example: 770672122
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -388,15 +388,15 @@ module RottenTomatoes
 
     # == Movie Cast
     # Pulls the complete movie cast for a movie.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Cast
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Cast Documentation}
     #
     # == Parameters
     #
-    # +movie_id+ - Int / String - Example: 770672122
+    # @param [Int|String] +movie_id+ - Example: 770672122
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -408,20 +408,20 @@ module RottenTomatoes
 
     # == Movie Reviews
     # Retrieves the reviews for a movie. Results are paginated if they go past the specified page limit.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Reviews
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Reviews Documentation}
     #
     # == Parameters
     #
-    # +movie_id+ - Int / String - Example: 770672122
-    # +args+ - Hash - May contain the following keys:
-    #   * :review_type - 3 different review types are possible: "all", "top_critic", and "dvd". "top_critic" shows all the Rotten Tomatoes designated top critics. "dvd" pulls the reviews given on the DVD of the movie. "all" as the name implies retrieves all reviews. Default value is "top_critic".
-    #   * :page_limit - The number of reviews to show per page. Default value is 20.
-    #   * :page - The selected page of reviews. Default value is 1.
-    #   * :country - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
+    # @param [Int|String] +movie_id+ - Example: 770672122
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:review_type` - 3 different review types are possible: "all", "top_critic", and "dvd". "top_critic" shows all the Rotten Tomatoes designated top critics. "dvd" pulls the reviews given on the DVD of the movie. "all" as the name implies retrieves all reviews. Default value is "top_critic".
+    #   * `:page_limit` - The number of reviews to show per page. Default value is 20.
+    #   * `:page` - The selected page of reviews. Default value is 1.
+    #   * `:country` - Provides localized data for the selected country (ISO 3166-1 alpha-2) if available. Otherwise, returns US data. Default value is 'us'
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -434,17 +434,17 @@ module RottenTomatoes
 
     # == Movie Similar
     # Shows similar movies for a movie.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Similar
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Similar Documentation}
     #
     # == Parameters
     #
-    # +movie_id+ - Int / String - Example: 770672122
-    # +args+ - Hash - May contain the following keys:
-    #   * :limit - Limit the number of similar movies to show.
+    # @param [Int|String] +movie_id+ - Example: 770672122
+    # @return [Hash] +args+ - May contain the following keys:
+    #   * `:limit` - Limit the number of similar movies to show.
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
@@ -457,17 +457,17 @@ module RottenTomatoes
 
     # == Movie Alias
     # Provides a movie lookup by an ID from a different vendor. Only supports imdb lookup at this time. WARNING: This feature is Beta quality. Accuracy of the lookup is not promised. If you see inaccuracies, please report them in the Rotten Tomatoes forums.
-    # http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Alias
+    # {http://developer.rottentomatoes.com/docs/read/json/v10/Movie_Alias Documentation}
     #
     # == Parameters
     #
-    # +args+ - Hash - May contain the following keys:
-    #   * :type - alias type you want to look up - only imdb is supported at this time.
-    #   * :id - The ID you want to look up
+    # @param [Hash] +args+ - May contain the following keys:
+    #   * `:type` - alias type you want to look up - only imdb is supported at this time.
+    #   * `:id` - The ID you want to look up
     #
     # == Returns
     #
-    # Hash - Response body after being parsed from JSON will be returned as a Hash.
+    # @return [Hash] - Response body after being parsed from JSON will be returned as a Hash.
     #
     # == Example
     #
