@@ -7,4 +7,3 @@ gem 'minitest', group: :test, require: nil
 gem 'bundler', group: :test, require: nil
 gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'hurley'
-gem 'json'
