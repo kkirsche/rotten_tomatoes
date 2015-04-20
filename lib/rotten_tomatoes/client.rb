@@ -27,8 +27,8 @@ module RottenTomatoes
       self
     end
 
-    # == Argument Hash
-    # The argument_hash method is used to generate the hash which will be URL encoded when making the next request with the Rotten Tomatoes API.
+    # == Argument Hash (Private Method)
+    # Internal method, not for use by third-party developers. The argument_hash method is used to generate the hash which will be URL encoded when making the next request with the Rotten Tomatoes API.
     #
     # == Parameters
     #
@@ -52,10 +52,10 @@ module RottenTomatoes
         end
       end
     end
+    private :argument_hash
 
-    # == Request
-    # The request method is used to send the get request to the API
-    # and then will return the parsed body as a hash.
+    # == Request (Private Method)
+    # Internal method, not for use by third-party developers. The request method is used to send the get request to the API and then will return the parsed body as a hash.
     #
     # == Parameters
     #
@@ -75,6 +75,7 @@ module RottenTomatoes
                                            args[:symbols] || []))
       JSON.parse(response.body)
     end
+    private :request
 
     # == Movies Search
     # The movies_search method is used to do plain text searches allowing you to find your favorite movies.
