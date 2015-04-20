@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kkirsche/rotten_tomatoes.svg?branch=master)](https://travis-ci.org/kkirsche/rotten_tomatoes) [![Test Coverage](https://codeclimate.com/github/kkirsche/rotten_tomatoes/badges/coverage.svg)](https://codeclimate.com/github/kkirsche/rotten_tomatoes) [![Code Climate](https://codeclimate.com/github/kkirsche/rotten_tomatoes/badges/gpa.svg)](https://codeclimate.com/github/kkirsche/rotten_tomatoes)
+[![Build Status](https://travis-ci.org/kkirsche/rotten_tomatoes.svg?branch=master)](https://travis-ci.org/kkirsche/rotten_tomatoes) [![Test Coverage](https://codeclimate.com/github/kkirsche/rotten_tomatoes/badges/coverage.svg)](https://codeclimate.com/github/kkirsche/rotten_tomatoes) [![Code Climate](https://codeclimate.com/github/kkirsche/rotten_tomatoes/badges/gpa.svg)](https://codeclimate.com/github/kkirsche/rotten_tomatoes) [![Gem Version](https://badge.fury.io/rb/rotten_tomatoes.svg)](http://badge.fury.io/rb/rotten_tomatoes) [![Dependency Status](https://gemnasium.com/kkirsche/rotten_tomatoes.svg)](https://gemnasium.com/kkirsche/rotten_tomatoes)
 
 # Rotten Tomatoes
 

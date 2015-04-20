@@ -1,5 +1,6 @@
 require 'minitest_helper'
 
+# RottenTomatoesTest module contains test code for the API client.
 module RottenTomatoesTest
   # Test the Rotten Tomatoes API Library
   class Client

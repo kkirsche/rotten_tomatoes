@@ -1,6 +1,8 @@
 require 'hurley'
 require 'json'
 
+# RottenTomatoes module contains code used to interact with the v1.0 JSON
+# API provided by Rotten Tomatoes.
 module RottenTomatoes
   # The Client class is the interface to the Rotten Tomatoes API
   class Client
